@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 def matrix_shape(matrix):
+    """ Shape of a matrix """
     row = len(matrix)
     if isinstance(matrix[0], list):
         col = len(matrix[0])
