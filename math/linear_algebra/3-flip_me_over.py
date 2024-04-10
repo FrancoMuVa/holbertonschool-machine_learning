@@ -3,6 +3,7 @@
 
 
 def matrix_transpose(matrix):
+    """ Returns the transpose of a 2d matrix """
     mat = []
     i = 0
     max_len = len(matrix[0])
