@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-""" Function that adds two """
+""" Function that adds two matrices element-wise """
 
 
 def add_matrices2D(mat1, mat2):
-    """ Returns the  """
+    """ Returns the sum of two matrices element-wise """
     length = len(mat1[0]) == len(mat2[0])
     if length:
         matrix = []
