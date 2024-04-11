@@ -6,6 +6,8 @@
 
 def cat_matrices2D(mat1, mat2, axis=0):
     """ Return a new matrix """
+    if len(mat1[0]) != len(mat2[0]):
+        return None
     if axis == 0:
         matrix = [row[:] for row in mat1]
         for row2 in mat2:
