@@ -18,7 +18,6 @@ def mat_mul(mat1, mat2):
                     val += (row1[row1_idx] * row2[col])
                     row1_idx += 1
                 resu.append(val)
-                print(resu)
             matrix.append(resu)
             x += 1
         return matrix
