@@ -6,5 +6,4 @@
 
 def np_transpose(matrix):
     """ Return a new numpy.ndarray """
-    new_mat = np.transpose(matrix)
-    return new_mat
+    return numpy.transpose(matrix)
