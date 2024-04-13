@@ -2,7 +2,6 @@
 """
     Function that calculates the shape of a numpy.ndarray.
 """
-import numpy
 
 
 def np_shape(matrix):
