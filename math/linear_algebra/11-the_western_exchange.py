@@ -3,6 +3,7 @@
     Function that transposes matrix.
 """
 
+
 def np_transpose(matrix):
     """ Return a new numpy.ndarray """
-    return .transpose(matrix)
+    return matrix.transpose()
