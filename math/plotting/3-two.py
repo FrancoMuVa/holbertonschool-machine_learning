@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
+"""
+    Function that plot x ↦ y1 and x ↦ y2 as line graphs.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-def two():
 
+def two():
+    """ plot x ↦ y1 and x ↦ y2 as line graphs """
     x = np.arange(0, 21000, 1000)
     r = np.log(0.5)
     t1 = 5730
