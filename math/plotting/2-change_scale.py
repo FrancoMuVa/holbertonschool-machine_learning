@@ -5,8 +5,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def change_scale():
-    """  """
+    """ Plot x ↦ y as a line graph. """
     x = np.arange(0, 28651, 5730)
     r = np.log(0.5)
     t = 5730
@@ -20,4 +21,3 @@ def change_scale():
     plt.ylabel('Fraction Remaining')
     plt.xlim(0, 28650)
     plt.show()
-    
