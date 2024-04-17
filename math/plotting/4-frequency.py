@@ -20,6 +20,7 @@ def frequency():
     plt.xticks(np.arange(0, max_range, 10))
     plt.yticks(np.arange(0, max_range, 5))
     plt.ylim(0, 30)
+    plt.xlim(0, 100)
 
     plt.hist(student_grades, bins=np.arange(0, max_range, 10),
              range=(0, max(student_grades)),
