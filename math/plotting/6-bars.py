@@ -12,7 +12,7 @@ def bars():
     fruit = np.random.randint(0, 20, (4, 3))
     plt.figure(figsize=(6.4, 4.8))
 
-    color = ['red', 'yellow', 'orange', '#ffe5b4']
+    color = ['red', 'yellow', '#ff8000', '#ffe5b4']
     fruits = ['apples', 'bananas', 'oranges', 'peaches']
     person = ['Farrah', 'Fred', 'Felicia']
 
@@ -27,5 +27,6 @@ def bars():
     plt.ylabel('Quantity of Fruit')
     plt.title('Number of Fruit per Person')
     plt.ylim(0, 80)
+    plt.yticks(np.arange(0, 81, 10))
     plt.legend(loc='upper right')
     plt.show()
