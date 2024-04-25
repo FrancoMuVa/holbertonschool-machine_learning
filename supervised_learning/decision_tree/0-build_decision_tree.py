@@ -6,9 +6,10 @@ import numpy as np
 
 
 class Node:
-    """ Node class """
+    """ Node Class """
     def __init__(self, feature=None, threshold=None, left_child=None,
                  right_child=None, is_root=False, depth=0):
+        """ Initializes a new instance of Node """
         self.feature = feature
         self.threshold = threshold
         self.left_child = left_child
@@ -19,6 +20,7 @@ class Node:
         self.depth = depth
 
     def max_depth_below(self):
+        """ Returns the maximum of the depths of the nodes """
         if self.is_leaf:
             return self.depth
         left = self.left_child.max_depth_below()
@@ -29,12 +31,14 @@ class Node:
 class Leaf(Node):
     """ Leaf Class """
     def __init__(self, value, depth=None):
+        """ Initializes a new instance of Leaf """
         super().__init__()
         self.value = value
         self.is_leaf = True
         self.depth = depth
 
     def max_depth_below(self):
+        """ Return the depth """
         return self.depth
 
 
@@ -42,6 +46,7 @@ class Decision_Tree():
     """ Decision Tree Class """
     def __init__(self, max_depth=10, min_pop=1, seed=0,
                  split_criterion="random", root=None):
+        """ Initializes a new instance of Decision_Tree """
         self.rng = np.random.default_rng(seed)
         if root:
             self.root = root
@@ -55,4 +60,5 @@ class Decision_Tree():
         self.predict = None
 
     def depth(self):
+        """ Return the depth """
         return self.root.max_depth_below()
