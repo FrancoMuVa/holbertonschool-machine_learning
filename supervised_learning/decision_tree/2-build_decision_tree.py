@@ -91,7 +91,7 @@ class Leaf(Node):
 
     def __str__(self):
         """ Returns a string """
-        return (f"-> leaf [value={self.value}] ")
+        return (f"-> leaf [value={self.value}]")
 
 
 class Decision_Tree():
