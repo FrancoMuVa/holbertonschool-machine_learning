@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+"""
+    Class Neuron
+"""
+import numpy as np
+
+
+class Neuron():
+    """ Neuron class """
+    def __init__(self, nx):
+        """ Initializes a new instance of Neuron """
+        if not isinstance(nx, int):
+            raise TypeError('nx must be an integer')
+        elif nx < 1:
+            raise ValueError('nx must be a positive integer')
+        self.__W = np.random.randn(nx).reshape(1, nx)
+        self.__b = 0
+        self.__A = 0
+
+    @property
+    def W(self):
+        """ Getter method """
+        return self.__W
+
+    @property
+    def b(self):
+        """ Getter method """
+        return self.__b
+
+    @property
+    def A(self):
+        """ Getter method """
+        return self.__A
+
+    def forward_prop(self, X):
+        """ Calculates the forward propagation of the neuron """
+        x = np.dot(self.__W, X) + self.__b
+        self.__A = 1 / (1 + np.exp(-x))
+        return self.__A
+
+    def cost(self, Y, A):
+        """ Calculates the cost of the model using logistic regression """
+        m = Y.shape[1]
+        cost = -np.sum((Y * np.log(A)) + ((1 - Y) * np.log(1.0000001 - A))) / m
+        return cost
+
+    def evaluate(self, X, Y):
+        """ Evaluates the neuron's predictions """
+        A = self.forward_prop(X)
+        pred = (A >= 0.5).astype(int)
+        return pred, self.cost(Y, A)
+
+    def gradient_descent(self, X, Y, A, alpha=0.05):
+        """ Calculates one pass of gradient descent on the neuron """
+        m = Y.shape[1]
+        dz = A - Y
+        dW = (1 / m) * np.matmul(X, np.transpose(dz))
+        db = (1 / m) * np.sum(dz)
+        self.__W -= alpha * np.transpose(dW)
+        self.__b -= alpha * db
+
+    def train(self, X, Y, iterations=5000, alpha=0.05):
+        """ Trains the neuron """
+        if not isinstance(iterations, int):
+            raise TypeError('iterations must be an integer')
+        elif iterations < 0:
+            raise ValueError('iterations must be a positive integer')
+        if not isinstance(alpha, float):
+            raise TypeError('alpha must be a float')
+        elif alpha < 0:
+            raise ValueError('alpha must be positive')
+
+        for _ in range(iterations):
+            A = self.forward_prop(X)
+            self.gradient_descent(X, Y, A, alpha)
+        return self.evaluate(X, Y)
