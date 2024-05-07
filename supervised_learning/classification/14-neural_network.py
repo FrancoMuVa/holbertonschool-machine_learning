@@ -102,4 +102,4 @@ class NeuralNetwork():
         for _ in range(iterations):
             A1, A2 = self.forward_prop(X)
             self.gradient_descent(X, Y, A1, A2, alpha)
-        return self.evaluate(X, Y)7
+        return self.evaluate(X, Y)
