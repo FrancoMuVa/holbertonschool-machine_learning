@@ -14,4 +14,4 @@ def update_variables_Adam(alpha, beta1, beta2, epsilon, var, grad, v, s, t):
     bias_correction_s = s1 / (1 - beta2 ** t)
     var1 = var - alpha * bias_correction_v / (np.sqrt(
         bias_correction_s) + epsilon)
-    return var1, v, s
+    return var1, v1, s1
