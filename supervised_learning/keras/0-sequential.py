@@ -3,8 +3,6 @@
 Tensorflow 2 & Keras
 """
 import tensorflow.keras as K
-from tensorflow.keras import layers as ly
-from tensorflow.keras.regularizers import L2
 
 
 def build_model(nx, layers, activations, lambtha, keep_prob):
@@ -12,10 +10,10 @@ def build_model(nx, layers, activations, lambtha, keep_prob):
     model = K.Sequential()
     model.add(K.Input(shape=(nx,)))
     for i in range(len(layers)):
-        model.add(ly.Dense(
+        model.add(K.layers.Dense(
             layers[i],
             activation=activations[i],
-            kernel_regularizer=L2(lambtha)))
+            kernel_regularizer=K.regularizers.L2(lambtha)))
         if i < len(layers) - 1:
-            model.add(ly.Dropout(keep_prob))
+            model.add(K.layers.Dropout(keep_prob))
     return model
