@@ -21,6 +21,7 @@ def train_model(network, data, labels, batch_size, epochs,
                                                    patience=patience))
     if save_best:
         best = K.callbacks.ModelCheckpoint(filepath=filepath,
+                                           save_best_only=True,
                                            monitor="val_loss")
         callbacks.append(best)
     return network.fit(x=data, y=labels, batch_size=batch_size,
