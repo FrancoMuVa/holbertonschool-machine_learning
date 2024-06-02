@@ -10,8 +10,8 @@ def train_model(network, data, labels, batch_size, epochs,
                 verbose=True, shuffle=False):
     """ Trains a model using mini-batch gradient descent """
     if early_stopping and validation_data:
-        callbacks = K.callbacks.EarlyStopping(monitor="val_loss",
-                                              patience=patience)
+        callbacks = [K.callbacks.EarlyStopping(monitor="val_loss",
+                                               patience=patience)]
     return network.fit(x=data, y=labels, batch_size=batch_size,
                        epochs=epochs, verbose=verbose, callbacks=callbacks,
                        validation_data=validation_data, shuffle=shuffle)
