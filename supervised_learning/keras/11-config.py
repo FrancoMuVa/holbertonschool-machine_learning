@@ -17,5 +17,5 @@ def load_config(filename):
     """ Function that loads a model with a specific configuration """
     with open(filename, 'r') as f:
         network = f.read() 
-    model = model.from_config(network)
+    model = K.models.model_from_json(network)
     return model
