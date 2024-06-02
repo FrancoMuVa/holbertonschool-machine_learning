@@ -7,7 +7,7 @@ import tensorflow.keras as K
 
 def save_model(network, filename):
     """ Function that saves an entire model """
-    network.save(filpath=filename)
+    network.save(filepath=filename)
     return None
 
 
