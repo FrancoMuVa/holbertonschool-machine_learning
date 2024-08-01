@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
+"""
+    Function that calculates the shape of a matrix
+"""
+
 
 def matrix_shape(matrix):
-    "Function that calculates the shape of a matrix"
+    "Return a new matrix"
     shape = []
     new_matrix = matrix
     while (isinstance(new_matrix, list)):

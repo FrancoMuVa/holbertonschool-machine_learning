@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
+"""
+    Function that returns the transpose of a 2D matrix
+"""
+
 
 def matrix_transpose(matrix):
-    "Function that returns the transpose of a 2D matrix"
+    "Return a new matrix"
     new = []
     for idx in range(len(matrix[0])):
         row = []
