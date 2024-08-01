@@ -3,6 +3,7 @@
     Function that concatenates two matrices along a specific axis
 """
 
+
 def cat_matrices2D(mat1, mat2, axis=0):
     "Return a new matrix"
     if (axis == 0) and (len(mat1[0]) == len(mat2[0])):

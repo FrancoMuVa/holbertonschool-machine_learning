@@ -3,6 +3,7 @@
     Function that adds two arrays element-wise
 """
 
+
 def add_arrays(arr1, arr2):
     "Return a new matrix"
     if len(arr1) != len(arr2):

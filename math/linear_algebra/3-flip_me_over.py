@@ -7,9 +7,9 @@
 def matrix_transpose(matrix):
     "Return a new matrix"
     new = []
-    for idx in range(len(matrix[0])):
+    for idx in range(0, len(matrix[0])):
         row = []
         for e in matrix:
             row.append(e[idx])
-        new.append([row])
+        new.append(row)
     return new
