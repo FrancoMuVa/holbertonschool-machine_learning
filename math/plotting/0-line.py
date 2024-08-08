@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+    Function that ploted 'y' as a solid red line.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
