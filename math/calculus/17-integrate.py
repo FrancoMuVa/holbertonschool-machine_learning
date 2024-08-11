@@ -10,6 +10,8 @@ def poly_integral(poly, C=0):
         return None
     return_list = [C]
     if len(poly) == 1:
+        if poly[0] == 0:
+            return [0]
         return_list.append(poly[0])
         return return_list
     for idx, cff in enumerate(poly):
