@@ -4,9 +4,11 @@
 """
 import numpy as np
 
+
 class Node:
     """ Node class """
-    def __init__(self, feature=None, threshold=None, left_child=None, right_child=None, is_root=False, depth=0):
+    def __init__(self, feature=None, threshold=None, left_child=None,
+                 right_child=None, is_root=False, depth=0):
         " Initializes a new instance of Node "
         self.feature = feature
         self.threshold = threshold
@@ -17,13 +19,14 @@ class Node:
         self.sub_population = None
         self.depth = depth
 
-    def max_depth_below(self) :
+    def max_depth_below(self):
         " Returns the maximun depths of the nodes "
         if self.is_leaf:
             return self.depth
         left = self.left_child.max_depth_below()
         right = self.right_child.max_depth_below()
         return left if left >= right else right
+
 
 class Leaf(Node):
     """ Leaf class """
@@ -34,13 +37,15 @@ class Leaf(Node):
         self.is_leaf = True
         self.depth = depth
 
-    def max_depth_below(self) :
+    def max_depth_below(self):
         " Return the depth "
         return self.depth
 
+
 class Decision_Tree():
     """ Decision Tree class """
-    def __init__(self, max_depth=10, min_pop=1, seed=0, split_criterion="random", root=None):
+    def __init__(self, max_depth=10, min_pop=1, seed=0,
+                 split_criterion="random", root=None):
         """ Initializate a new instance of Decision Tree """
         self.rng = np.random.default_rng(seed)
         if root:
@@ -54,6 +59,6 @@ class Decision_Tree():
         self.split_criterion = split_criterion
         self.predict = None
 
-    def depth(self) :
+    def depth(self):
         " Return the depth "
         return self.root.max_depth_below()
