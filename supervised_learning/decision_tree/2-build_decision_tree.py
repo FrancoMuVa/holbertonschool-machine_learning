@@ -62,13 +62,13 @@ class Node:
         root_line = ''
         if self.is_root:
             root_line = f'root [feature={self.feature}, \
-            threshold={self.threshold}]'
+threshold={self.threshold}]'
         left = self.left_child_add_prefix(self.left_child.__str__())
         right = self.right_child_add_prefix(self.right_child.__str__())
         if self.is_root:
             return f'{root_line}\n{left}{right}'
         return f'-> node [feature={self.feature}, \
-            threshold={self.threshold}]\n{left}{right}'
+threshold={self.threshold}]\n{left}{right}'
 
 
 class Leaf(Node):
