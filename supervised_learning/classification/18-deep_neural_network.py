@@ -48,9 +48,9 @@ class DeepNeuralNetwork:
         " Calculates the forward propagation of the neural network "
         self.__cache['A0'] = X
         for i in range(1, self.__L + 1):
-            Z = np.dot(self.__weights['W' + str(i)],
-                       self.__cache['A' + str(i - 1)])
-            + self.__weights['b' + str(i)]
+            Z = (np.dot(self.__weights['W' + str(i)],
+                        self.__cache['A' + str(i - 1)])
+                 + self.__weights['b' + str(i)])
             A = 1 / (1 + np.exp(-Z))
             self.__cache['A' + str(i)] = A
         return A, self.__cache
