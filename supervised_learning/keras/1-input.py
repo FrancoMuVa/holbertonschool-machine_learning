@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    Sequential
+    Input
 """
 import tensorflow.keras as K
 
