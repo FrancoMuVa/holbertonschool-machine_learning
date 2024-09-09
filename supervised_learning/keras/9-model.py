@@ -13,4 +13,4 @@ def save_model(network, filename):
 
 def load_model(filename):
     " loads an entire model "
-    return K.model.load_model(filename)
+    return K.saving.load_model(filename)
