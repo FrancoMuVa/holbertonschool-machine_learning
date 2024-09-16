@@ -12,5 +12,5 @@ def batch_norm(Z, gamma, beta, epsilon):
     """
     mean = np.mean(Z, axis=0)
     var = np.var(Z, axis=0)
-    z = (Z - mean) / (np.sqrt(var+ epsilon))
+    z = (Z - mean) / (np.sqrt(var + epsilon))
     return z * gamma + beta
