@@ -28,7 +28,7 @@ def lenet5(x, y):
                              kernel_initializer=he_normal)(flat1)
     fully2 = tf.layers.Dense(units=84, activation=tf.nn.relu,
                              kernel_initializer=he_normal)(fully1)
-    logits = tf.layers.Dense(units=10, activation=tf.nn.relu)(fully2)
+    logits = tf.layers.Dense(units=10, kernel_initializer=he_normal)(fully2)
 
     y_pred = tf.nn.softmax(logits)
     pre_loss = tf.nn.softmax_cross_entropy_with_logits_v2(labels=y,
