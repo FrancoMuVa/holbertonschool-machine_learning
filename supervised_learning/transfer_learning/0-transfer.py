@@ -86,7 +86,7 @@ if __name__ == '__main__':
     model.fit(
         datagen.flow(x_train, y_train, batch_size=100),
         validation_data=(x_test, y_test),
-        epochs=60,
+        epochs=35,
         verbose=True,
         callbacks=[early_stopping, lr_scheduler]
     )
